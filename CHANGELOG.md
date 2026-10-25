@@ -1,5 +1,13 @@
 # 更新日志
 
+## 1.0.1 — 2026-10-26
+
+首个由 CI 发布的版本，用来打通并验证 OIDC 流水线（功能与 1.0.0 相同）。
+
+### 工程
+- 发布改为推 `v*` tag 触发：GitHub Actions 用 npm trusted publishing 发布，附 provenance，仓库里不放长期 token。
+- 记录首包引导的坑：trusted publisher 只能挂在**已存在**的包上（PyPI 可以给还不存在的包配 OIDC，npm 不行），所以 1.0.0 必须手动发一版；registry 上的 `0.0.0-stage` 是 npm 12 staged publishing 留下的占位版本，正常现象。
+
 ## 1.0.0 — 2026-10-26
 
 首个版本。

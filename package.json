@@ -1,6 +1,6 @@
 {
   "name": "dsh-rightbar-tab-gestures",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DeepSeek Harness right-sidebar tabs close on a middle click or a left double click, exactly like browser tabs.",
   "icon": "./assets/icon.svg",
   "author": "稻米鼠",

@@ -93,6 +93,21 @@ git tag v1.0.0
 git push origin main --tags
 ```
 
+### 新包的首发要手动一次
+
+npm 的 trusted publisher 只能挂在**已经存在**的包上（PyPI 可以给还不存在的包配 OIDC，npm 不行），所以第一个版本必须手工发：
+
+```bash
+npm login                      # 走浏览器 + 2FA / passkey
+npm publish --access public    # 会停在验证上，浏览器里确认
+npm trust github dsh-rightbar-tab-gestures --file release.yml \
+  --repo dmscode/dsh-rightbar-tab-gestures --allow-publish
+```
+
+`npm trust` 同样要 2FA，而且只认真实终端：非交互环境下它会直接 `EOTP` 退出，不会帮你开浏览器。首发之后（这里是 1.0.1 起）才轮到推 tag 自动发。
+
+顺带一个容易误会的现象：首发时 registry 上会先出现一个 `0.0.0-stage` 占位版本（description 是 "Temporary package placeholder for staged publishing"），那是 npm 12 staged publishing 预留包名用的，不用管，它不影响 `latest`。
+
 流水线会先校验 tag 与 `package.json` 版本一致、跑 `npm test`，再发布、轮询确认版本已进 registry，最后用 `scripts/release-notes.mjs` 从 `CHANGELOG.md` 取正文、附上 `npm pack` 的 tgz 创建 GitHub Release。
 
 ## License
