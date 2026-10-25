@@ -1,0 +1,61 @@
+{
+  "name": "dsh-rightbar-tab-gestures",
+  "version": "1.0.0",
+  "description": "DeepSeek Harness right-sidebar tabs close on a middle click or a left double click, exactly like browser tabs.",
+  "icon": "./assets/icon.svg",
+  "author": "稻米鼠",
+  "license": "MIT",
+  "homepage": "https://github.com/dmscode/dsh-rightbar-tab-gestures#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmscode/dsh-rightbar-tab-gestures.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dmscode/dsh-rightbar-tab-gestures/issues"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "right-sidebar",
+    "tabs",
+    "middle-click",
+    "double-click",
+    "gestures"
+  ],
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "type": "module",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./assets/icon.svg"
+  },
+  "files": [
+    "lib/**/*.js",
+    "cordis.patch.yml",
+    "README.md",
+    "CHANGELOG.md",
+    "locale/*.json",
+    "assets/icon.svg",
+    "assets/icon-512.png",
+    "assets/cover-1600x900.png",
+    "LICENSE"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true
+    }
+  },
+  "scripts": {
+    "test": "node test-gestures.mjs"
+  }
+}
