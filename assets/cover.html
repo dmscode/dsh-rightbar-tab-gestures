@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>dsh-rightbar-tab-gestures cover</title>
+<style>
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 900px; overflow: hidden;
+    font-family: "Microsoft YaHei", "PingFang SC", system-ui, sans-serif;
+    background:
+      radial-gradient(900px 620px at 78% 42%, #FFFDF7 0%, rgba(255,253,247,0) 70%),
+      linear-gradient(135deg, #FBF6EA 0%, #F0E5CF 100%);
+    color: #1F2933;
+    display: flex; align-items: center; gap: 80px;
+    padding: 0 110px; box-sizing: border-box;
+  }
+  .left { width: 690px; }
+  .tag {
+    display: inline-block; padding: 9px 20px; border: 3px solid #1F2933; border-radius: 999px;
+    font-size: 22px; letter-spacing: 2px; background: #FFFDF7;
+  }
+  h1 { font-size: 92px; line-height: 1.06; margin: 28px 0 26px; letter-spacing: -2px; font-weight: 800; }
+  h1 em { font-style: normal; color: #EC7B2E; }
+  .lead { font-size: 36px; line-height: 1.5; margin: 0 0 18px; font-weight: 600; }
+  .note { font-size: 24px; line-height: 1.6; margin: 0 0 34px; color: #56616D; }
+  .pkg {
+    display: inline-block; font-family: "Cascadia Mono", Consolas, monospace; font-size: 23px;
+    padding: 12px 20px; border: 3px solid #1F2933; border-radius: 14px; background: #FFFDF7;
+  }
+  .stage { position: relative; width: 700px; height: 340px; }
+  .card {
+    position: absolute; inset: 0; background: #FFFDF7; border: 4px solid #1F2933; border-radius: 34px;
+    box-shadow: 22px 26px 0 rgba(31,41,51,.12);
+  }
+  .strip { position: absolute; left: 36px; top: 44px; display: flex; gap: 14px; }
+  .chip {
+    position: relative; width: 176px; height: 66px; border: 4px solid #1F2933; border-radius: 16px;
+    background: #F3E8D4; display: flex; align-items: center; gap: 12px; padding: 0 16px; box-sizing: border-box;
+  }
+  .chip .dot { width: 18px; height: 18px; border-radius: 50%; background: #7BA05B; flex: 0 0 auto; }
+  .chip .bar { height: 14px; border-radius: 7px; background: #D3C4A8; flex: 1 1 auto; }
+  .chip.live {
+    background: #FFFDF7; transform: translateY(-6px); box-shadow: 0 12px 22px rgba(31,41,51,.16);
+  }
+  .chip.live .x { position: absolute; right: 10px; top: 50%; width: 30px; height: 30px; margin-top: -15px; }
+  .chip.live .x::before, .chip.live .x::after {
+    content: ""; position: absolute; left: 13px; top: 2px; width: 6px; height: 26px; border-radius: 3px;
+    background: #EC7B2E; transform: rotate(45deg);
+  }
+  .chip.live .x::after { transform: rotate(-45deg); }
+  .cursor {
+    position: absolute; left: 572px; top: 78px; width: 44px; height: 60px;
+    background: #1F2933;
+    clip-path: polygon(0 0, 0 78%, 26% 58%, 44% 100%, 72% 88%, 54% 48%, 100% 46%);
+  }
+  .hint {
+    position: absolute; left: 36px; top: 150px; font-size: 26px; line-height: 1.7; color: #56616D;
+  }
+  .hint b { color: #1F2933; }
+  .keys { position: absolute; left: 36px; top: 232px; display: flex; gap: 14px; }
+  .key {
+    font-family: "Cascadia Mono", Consolas, monospace; font-size: 21px; padding: 10px 16px;
+    border: 3px solid #1F2933; border-radius: 12px; background: #FBF6EA;
+  }
+</style>
+</head>
+<body>
+  <div class="left">
+    <span class="tag">DSH 插件</span>
+    <h1>右侧栏标签<em>手势</em></h1>
+    <p class="lead">中键关闭 · 左键双击关闭</p>
+    <p class="note">关闭动作复用官方那个 ×，所以关不掉的标签依旧关不掉：<br>唯一停靠的 guide 卡片，规则与原生完全一致。</p>
+    <span class="pkg">dsh-rightbar-tab-gestures</span>
+  </div>
+  <div class="stage">
+    <div class="card">
+      <div class="strip">
+        <div class="chip"><span class="dot"></span><span class="bar"></span></div>
+        <div class="chip"><span class="dot" style="background:#8FA3B8"></span><span class="bar"></span></div>
+        <div class="chip live"><span class="dot" style="background:#EC7B2E"></span><span class="bar" style="max-width:74px"></span><span class="x"></span></div>
+      </div>
+      <div class="cursor"></div>
+      <div class="hint">悬停才出现的 <b>×</b>，手势替你点它</div>
+      <div class="keys"><span class="key">鼠标中键</span><span class="key">双击左键</span></div>
+    </div>
+  </div>
+</body>
+</html>

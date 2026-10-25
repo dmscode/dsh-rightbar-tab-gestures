@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#FBF6EA"/>
+      <stop offset="1" stop-color="#EFE4CE"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="url(#bg)"/>
+  <rect x="8" y="8" width="496" height="496" rx="112" fill="none" stroke="#1F2933" stroke-width="12"/>
+
+  <!-- 后面那张标签，只露出一条边，示意这是标签条而不是单个页签 -->
+  <rect x="118" y="160" width="300" height="118" rx="38" fill="#EFE3CC" stroke="#1F2933" stroke-width="13"/>
+
+  <!-- 正在被关掉的那张 -->
+  <rect x="70" y="212" width="310" height="126" rx="40" fill="#FFFDF7" stroke="#1F2933" stroke-width="13"/>
+  <circle cx="118" cy="275" r="15" fill="#7BA05B"/>
+  <rect x="150" y="262" width="110" height="26" rx="13" fill="#D9CBB2"/>
+  <g stroke="#EC7B2E" stroke-width="20" stroke-linecap="round">
+    <path d="M322 257 L362 297"/>
+    <path d="M362 257 L322 297"/>
+  </g>
+
+  <!-- 鼠标，中键点亮：中键关闭是主手势 -->
+  <rect x="206" y="350" width="100" height="138" rx="50" fill="#FFFDF7" stroke="#1F2933" stroke-width="12"/>
+  <path d="M256 358 L256 424" stroke="#1F2933" stroke-width="10" stroke-linecap="round"/>
+  <rect x="245" y="372" width="22" height="36" rx="11" fill="#EC7B2E" stroke="#1F2933" stroke-width="6"/>
+</svg>
